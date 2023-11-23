@@ -17,39 +17,15 @@ public class Main {
         double average = 0;
         double smallest = 0;
         //todo дописать логику программы ниже.
-        if ((first > second && first > third) && (second > third)) {
-            greatest = first;
-            average = second;
-            smallest = third;
-        } else if ((first > second && first > third) && (second < third)) {
-            greatest = first;
-            average = third;
-            smallest = second;
-        } else if ((first < second && first > third) && (second > third)) {
-            greatest = second;
+        greatest = first > second && first > third ? first : second > third ? second : third;
+        smallest = first < second && first < third ? first : second < first ? second : third;
+        if ((first > second && first < third) || (first < second && first > third)) {
             average = first;
-            smallest = third;
-        } else if ((first < second && first < third) && (second > third)) {
-            greatest = second;
-            average = third;
-            smallest = first;
-        } else if ((first > second && first < third) && (second < third)) {
-            greatest = third;
-            average = first;
-            smallest = second;
-        } else if ((first < second && first < third) && (second < third)) {
-            greatest = third;
+        } else if ((second > first && second < third) || (second < first && second > third)) {
             average = second;
-            smallest = first;
         } else {
-            System.out.println("Не вводите равные веса");
+            average = third;
         }
-
-
-
-
-
-
         //todo
 
 
